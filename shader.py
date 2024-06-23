@@ -77,6 +77,9 @@ def test_color(surf, factor = 2):
         surf.blit(s,(0,0))
         for i, point in enumerate(rgb):
             bars[i].render(surf, point)
+            pos = [coords[0]+lenght*point,coords[1]+i*50+ 8]
+            pygame.draw.circle(surf,(255,255,255),pos,10)
+            pygame.draw.circle(surf,(0,0,0),pos,10,3)
             if  bars[i].rect.collidepoint(*mpos) and clicking:
                 holding = i
             if holding == i:
